@@ -17,7 +17,7 @@ int main()
 		
 		case 1:{
 			printf("\tLimite maximo de caracteres eh de 255: \n\n\t");//indica quantidade maxima de caracteres 
-			gets(msg);//varre a mensagem
+			scanf("%s", (char*) msg);//varre a mensagem
 			char *pmsg= msg;
 			printf("\n\t Frase ja codificada:\n\t\t");//mostra para usuario
 			
@@ -38,7 +38,7 @@ int main()
 			 {
 				printf("\tn%d:\t ", i+1); scanf("%d", &num[i]);//mostrar e ler numeros
 				pmsg = (char*)num;
-				if(num[i]==0) //laço para decodificacao
+				if(num[i]==0) //laÃ§o para decodificacao
 				break;
 			 }
 			 
