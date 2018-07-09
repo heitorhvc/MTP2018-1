@@ -28,7 +28,6 @@ int main() {
 			else{estado=2;}
 		}
 	}
-	//	printf("\t%d", estado);
 			if(estado==0)
 			{printf("\nsequencia binaria multipla de 3");} 
 		else {printf("\nnao eh multiplo de 3");}
