@@ -49,7 +49,7 @@ void NOT()//funcao
 void AND()//funcao
 {
 	int i = 0;//variaveis
-	for(i = 0; i < 32; i++)//laço para conversao
+	for(i = 0; i < 32; i++)//laÃ§o para conversao
 	{
 		if(binario1[i] == 1 && binario2[i] == 1)
 			resultado[i] = 1;
@@ -139,7 +139,7 @@ int main()
 			scanf("%d",&decimal1);//analiza valores
 			getchar();
 			printf("Digite o valor do segundo numero decimal ");//pede entrada de valores para conversao
-			scanf("%d",decimal2);//analiza valores
+			scanf("%d", &decimal2);//analiza valores
 			getchar();
 				printf("AND %d (", decimal1);
 			for(i = 31; i >= 0; i--)//laco para conversao
@@ -156,7 +156,7 @@ int main()
 			scanf("%d",&decimal1);//analiza valores
 			getchar();
 			printf("Digite o valor do segundo numero decimal");//pede entrada de valores para conversao
-			scanf("%d",decimal2);//analiza valores
+			scanf("%d", &decimal2);//analiza valores
 			getchar();
 			break;//Faz uma pausa
 		}
@@ -167,7 +167,7 @@ int main()
 			scanf("%d",&decimal1);//analiza valores
 			getchar();
 			printf("Digite o valor do segundo numero decimal");//pede entrada de valores para conversao 
-			scanf("%d",decimal2);//analiza valores
+			scanf("%d", &decimal2);//analiza valores
 			getchar();
 			break;//Faz uma pausa
 		}
