@@ -1,57 +1,36 @@
 //Heitor Henrique Vasconcelos Carneiro 
 //11711EEL024
-#include <stdio.h>//incluindo biblioteca
-#define m 10000//definindo
-int main()//abrindo funcao principal
-{
-	int estd=0,i=0;//declarando variaveis
-	char bin[m];
-	printf("Digite o valor a em binario :   ");//pedido para entrada de dados
-	getchar();
-	fgets(bin,10000,stdin);
-	while(bin[i] != '\0')//laco
+#include <stdio.h>
+
+int main() {
+
+	int estado,j;
+	char bits[256];
+
+	printf("entre com o numero em binario; sequencias de 0 e 1\n");
+	fgets(bits,256,stdin);
+  	estado=0; 
+	for (j=0;bits[j+1]!='\0';j++)
 	{
-		if(bin[i] == '1' || bin[i] == '0')//condicao 
+		if(estado==0)
 		{
-			if(estd == 0)//condicao 
-			{
-				if(bin[i] == '0')//condicao 
-				{
-					estd = 0;
-				}
-				else//condicao 
-				estd = 1;
-			}
-			else//condicao 
-			{
-				if(estd == 1)//condicao 
-				{
-					if(bin[i] == '0')//condicao 
-					estd = 2;
-					else//condicao 
-					estd = 0;
-				}
-				else//condicao 
-				if(estd == 2)//condicao 
-				{
-					if(bin[i] == '0')//condicao 
-					estd = 1;
-					else//condicao 
-					estd = 2;
-				}
-			}
-			i++;//incremento
+			if (bits[j]=='1'){estado=1;}
+			else{estado=0;}
 		}
-		else//condicao 
+		else if(estado==1)
 		{
-			printf("O numero inserido nao eh valido de acordo com os criterios");//mensgem para usuario
-			return 0;//retorno
+			if(bits[j]=='0'){estado=2;}
+			else{estado=0;}
 		}
-		
+		else
+		{
+			if(bits[j]=='0'){estado=1;}
+			else{estado=2;}
+		}
 	}
-	if(estd == 0)//condicao 
-	printf("O valor inserido pelo usuario eh um multiplo de 3 :  %s",bin);//mensagem para usuario
-	else //condicao
-	printf("O valor inserido pelo usuario nao eh um multiplo de 3 ");
-	return 0;//retorno
-}
+	//	printf("\t%d", estado);
+			if(estado==0)
+			{printf("\nsequencia binaria multipla de 3");} 
+		else {printf("\nnao eh multiplo de 3");}
+	return 0;
+} 
