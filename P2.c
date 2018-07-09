@@ -36,13 +36,13 @@ int main ()
 	switch(comando)
 	{
 		case '1':
-			scanf("%s", bits); getchar();
+			scanf("%s", (char *) &bits); getchar();
 			for(i=0; bits[i] != '\0'; i++)
 				num = num*2 + (bits[i] - '0');	
 			printf("%d", num);
 			break;
 		case '2':
-			scanf("%s", bits); getchar();
+			scanf("%s",(char *) &bits); getchar();
 			for(i=0; bits[i] != '\0'; i++)
 				num = num*2 + (bits[i] - '0');	
 			printf("%X", num);
