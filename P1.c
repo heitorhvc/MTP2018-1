@@ -8,7 +8,7 @@ int main()//abrindo funcao principal
 	char bin[m];
 	printf("Digite o valor a em binario :   ");//pedido para entrada de dados
 	getchar();
-	gets(bin);
+	fgets(bin,10000,stdin);
 	while(bin[i] != '\0')//laco
 	{
 		if(bin[i] == '1' || bin[i] == '0')//condicao 
