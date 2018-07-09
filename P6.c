@@ -2,18 +2,20 @@
 //11711EEL024
 #include <stdio.h>
 
-int vet[20],a,i;
+int vet[20],i,a;
+float b;
 int ler (int vet[20]) 
 {
  	printf("digite o tamanho desejado do vetor:   ");
- 	scanf("%d",&a);
+ 	scanf("%i",&a);
  	if (a <= 20)
  	{
  		for (i = 0 ; i < a ; i++)
- 	{
- 		printf("digite os numeros dos vetores:    ");
-		scanf("%i",&vet[i]);	
-	}
+ 		{
+ 			printf("digite os numeros dos vetores:    ");
+			scanf("%i",&vet[i]);
+			getchar( );	
+		}
 	}
 	else 
 		return 0;
@@ -25,8 +27,9 @@ int soma (int vet[20])
 	{
 		soma1= soma1 + vet[i];
 	}
+	b= (float)soma1/(float)a;
 	printf("A soma e:  %d  \n\n",soma1);
-	printf("A media e: %2.f\n\n",(float)soma1/a);
+	printf("A media e: %.2f\n\n",b);
 }
 int main()
 {
@@ -34,4 +37,3 @@ int main()
 	soma(vet);
 	return 0;
 }
-
