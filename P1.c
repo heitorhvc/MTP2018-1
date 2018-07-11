@@ -1,35 +1,57 @@
 //Heitor Henrique Vasconcelos Carneiro 
 //11711EEL024
 #include <stdio.h>
-
-int main() {
-
-	int estado,j;
-	char bits[256];
-
-	printf("entre com o numero em binario; sequencias de 0 e 1\n");
-	fgets(bits,256,stdin);
-  	estado=0; 
-	for (j=0;bits[j+1]!='\0';j++)
+#define m 10000
+int main()
+{
+	int estado=0,i=0;
+	char bin[m];
+	printf("Digite o valor do binario:   ");
+	getchar();
+	scanf("%[^\n]",bin);;
+	while(bin[i] != '\0')
 	{
-		if(estado==0)
+		if(bin[i] == '1' || bin[i] == '0')
 		{
-			if (bits[j]=='1'){estado=1;}
-			else{estado=0;}
-		}
-		else if(estado==1)
-		{
-			if(bits[j]=='0'){estado=2;}
-			else{estado=0;}
+			if(estado == 0)
+			{
+				if(bin[i] == '0')
+				{
+					estado = 0;
+				}
+				else
+				estado = 1;
+			}
+			else
+			{
+				if(estado == 1)
+				{
+					if(bin[i] == '0')
+					estado = 2;
+					else
+					estado = 0;
+				}
+				else
+				if(estado == 2)
+				{
+					if(bin[i] == '0')
+					estado = 1;
+					else
+					estado = 2;
+				}
+			}
+			i++;
 		}
 		else
 		{
-			if(bits[j]=='0'){estado=1;}
-			else{estado=2;}
+			printf("O numero nao e valido");
+			return 0;
 		}
+		
 	}
-			if(estado==0)
-			{printf("\nsequencia binaria multipla de 3");} 
-		else {printf("\nnao eh multiplo de 3");}
+	if(estado == 0)
+	printf("o valor e multiplo de 3:  %s",bin);
+	else 
+	printf("ele nao e um multiplo de 3");
 	return 0;
-} 
+}
